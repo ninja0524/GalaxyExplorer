@@ -4,7 +4,13 @@ Galaxy Explorer is an open-source HoloLens application that was developed in 6-w
 
 The following sections serve as guide posts to help navigate the code by explaining some of the larger systems, both how they work and how they interact.
 
+#HoloLens Tools
+
+Download all of the developer tools from the Microsoft Developer Website: http://lens.ms/Sa37sr
+
 #Running in Unity
+
+This project is built with the Unity HoloLens Technical Preview. A link to download the latest version can be found with the rest of the HoloLens tools.
 
 Note that by default when you point Unity at this repo, it will open a new scene. Navigate to /Scenes and double-click MainScene to setup the editor properly. After that, hitting Play will start the experience.
 
@@ -120,7 +126,7 @@ Performance choices:
 * The orbit updater has some expensive computation that may not converge quickly, so the planets in the solar system stop updating during transitions.
 * The first transition from the earth to the solar system is taxing, especially on load. We preload the solar system during a blank screen and delete it at the end of the introduction to expedite the first time the solar system is loaded (part of transition logic).
 
-The TransitionManager publically exposes the FadeContent coroutine, so any script logic can fade in/out an object and all of its children overtime, given an animation curve.
+The TransitionManager publicly exposes the FadeContent coroutine, so any script logic can fade in/out an object and all of its children overtime, given an animation curve.
 
 #Fader
 
